@@ -15,7 +15,8 @@ class PluginBootstrapSlider_v1{
     $element = array();
     $element[] = wfDocument::createHtmlElement('link', null, array('href' => '/plugin/bootstrap/slider_v1/bootstrap-slider.css', 'rel' => 'stylesheet'));
     $element[] = wfDocument::createHtmlElement('script', null, array('src' => '/plugin/bootstrap/slider_v1/bootstrap-slider.js', 'type' => 'text/javascript'));
-    $element[] = wfDocument::createHtmlElement('script', null, array('src' => '/plugin/bootstrap/slider_v1/PluginBootstrapSlider_v1.js', 'type' => 'text/javascript'));
+    wfPlugin::enable('include/js');
+    $element[] = wfDocument::createWidget('include/js', 'include', array('src' => '/plugin/bootstrap/slider_v1/PluginBootstrapSlider_v1.js'));    
     wfDocument::renderElement($element);
   }
 }
