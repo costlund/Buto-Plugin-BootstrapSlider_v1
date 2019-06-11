@@ -1532,6 +1532,25 @@ var windowIsDefined = (typeof window === "undefined" ? "undefined" : _typeof(win
 				}
 
 				var val = this._state.value[handleIdx] + dir * this.options.step;
+                                /** 
+                                 * sitdeveloper
+                                 * Using arrow keys #773
+                                 * Set val to options.min if it is less than that.
+                                 */
+                                if(val < this.options.min){
+                                  val = this.options.min;
+                                }
+                                /**
+                                 * sitdeveloper
+                                 * Using arrow keys #773
+                                 * Set val to options.max if it is more than that.
+                                 */
+                                if(val > this.options.max){
+                                  val = this.options.max;
+                                }
+                                /**
+                                 * 
+                                 */
 				var percentage = val / this.options.max * 100;
 				this._state.keyCtrl = handleIdx;
 				if (this.options.range) {
